@@ -1,0 +1,169 @@
+main{
+	background-color: $main-bg;
+}
+
+.mainBlock{
+	@include flexbox();
+	justify-content: space-between;
+	padding: 65px 0 80px;
+}
+
+.newsBlock{
+	width: 50%;
+	&__title{
+		font: $Ubuntu24;
+		color: $darckFont;
+		margin-bottom: 50px;
+	}
+}
+
+.news{
+	@include flexbox();
+	justify-content: space-between;
+	margin-bottom: 30px;
+	
+	&__img{
+		margin-right: 35px;
+		position: relative;
+
+		.date{
+			position: absolute;
+			top: 15px;
+			left: -20px;
+			text-align: center;
+
+			&__month{
+				display: block;
+				width: 40px;
+				height: 40px;
+				font: $Ubuntu15;
+				line-height: 40px;
+				color: $whiteText;
+				background-color: $blueHover;
+			}
+
+			&__day{
+				@extend .date__month;
+				font:$Ubuntu18;
+				color: $dayFont;
+				background-color: $yellowBg;
+			}
+		}
+
+	}
+
+	&__item{
+		padding-top: 8px;
+	}
+
+	&__title{
+		font: $Ubuntu16;
+		color: $darckFont;
+
+		&:hover{
+			color: $blueHover;
+		}
+	}
+
+	&__info{
+		color: $grayFont;
+		margin: 12px 0 30px;
+
+		.author{
+			color: $blueFont;
+		}
+
+		.comments{
+			@extend .author;
+		}
+	}
+
+	&__text{
+		@extend .news__info;
+	}
+}
+
+.panels{
+	width: 50%;
+
+	&__title{
+		@extend .newsBlock__title;
+	}
+}
+
+.panel{
+	&__title{
+		height: 40px;
+		font: $Ubuntu13;
+		color: $darckFont;
+		background-color: $white-bg;
+		border: $grayBorder;
+		margin-bottom: 5px;
+
+		&Text{
+			margin-left: 12px;
+		}
+		.sign{
+			display: inline-block;
+			width: 40px;
+			text-align: center;
+			line-height: 40px;
+			border-right: $grayBorder2;
+		}
+
+		&--active{
+			color: $whiteText;
+			background-color: $yellowBg;
+			border: none;
+			.sign{
+				border-right: $yellowBorder;
+			}
+		}
+	}
+
+	&__text{
+		@extend .news__info;
+		margin: 30px 0 42px 40px;
+		display: none;
+
+		&--active{
+			display: block;
+		}
+	}
+}
+
+.brands{
+	background-color: $white-bg;
+}
+
+.brand{
+	height: 240px;
+	@include flexbox();
+	justify-content: space-between;
+	align-items: center;
+	
+	&__item{
+
+		& a{
+			display: inline-block;
+		}
+		#brand1{
+			@include sprite($brand1);
+		}
+		#brand2{
+			@include sprite($brand2);
+		}
+		#brand3{
+			@include sprite($brand3);
+		}
+		#brand4{
+			@include sprite($brand4);
+		}
+		#brand5{
+			@include sprite($brand5);
+		}
+		#brand6{
+			@include sprite($brand6);
+		}
+	}
+}

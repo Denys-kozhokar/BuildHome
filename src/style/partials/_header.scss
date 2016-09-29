@@ -1,0 +1,113 @@
+.top{
+	@include flexbox();
+	justify-content: space-between;
+	padding-top: 37px;
+	margin-bottom: 37px;
+}
+
+.logo{
+	@include sprite($logo);
+}
+
+.navigation{
+	@include flexbox();
+	justify-content: space-between;
+	background-color: #2a2d32;
+	margin: 0 0 40px 0;
+
+	&__search{
+		height: 40px;
+		border: $darck-border;
+		margin-right: 8px;
+		align-self: center;
+		input{
+			background-color: $darcBg;
+			width: 240px;
+			padding: 0 15px;
+			border: none;
+			align:center;
+			height: 100%;
+			color: $darkGrayText;
+		}
+	}
+}
+
+.menu{
+	@include flexbox();
+	justify-content: flex-start;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	
+	&__item{
+		border-right: $darck-border;
+		&--active{
+			background-color: $blueHover;
+		}
+	}
+
+	&__link{
+		display: inline-block;
+		padding: 23px 30px;
+		font: $UbuntuCond;
+		color: $whiteText;
+		&:hover{
+			color: $yellowBg;
+		}
+	}
+}
+
+.jcarousel-wrapper{
+	margin-bottom: 70px;
+	width: 100%;
+	height: auto;
+	img{
+		width: 100%
+	}
+}
+
+.articles{
+	margin-bottom: 88px;
+	@include flexbox();
+	justify-content: space-between;
+
+}
+
+.article{
+	@include flexbox();
+	justify-content: space-between;
+	
+	&__number{
+		color: #efeff0;
+		font:$Ubuntu90;
+		margin: 0 10%;
+		align-self: flex-start;
+	}
+
+	&__item{
+	
+	}
+
+	&__title{
+		font: $Ubuntu20;
+		color: $dayFont;
+		margin-bottom: 27px;
+	}
+
+	&__text{
+		font: $Ubuntu13;
+		color: #8a8a8a;
+		margin-bottom: 25px;
+	}
+
+	&__more{
+		a{
+			font:$Ubuntu13;
+			color: $dayFont;
+
+			&:hover{
+				color: $blueHover;
+			}
+		}
+	}
+}

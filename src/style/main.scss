@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Ubuntu Condensed Regular';
+    src: url('fonts/ubuntu-c-webfont.woff2') format('woff2'),
+         url('fonts/ubuntu-c-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu Medium';
+    src: url('fonts/ubuntu-m-webfont.woff2') format('woff2'),
+         url('fonts/ubuntu-m-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArialMT';
+    src: url('fonts/arialmt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *:before, *:after { 
+	box-sizing: border-box;
+	transition: all 0.3s linear 0s;
+}
+
+a { 
+	text-decoration: none;
+}
+
+.container{
+	max-width: 1160px;
+	margin: 0 auto;
+	font: 13px ArialMT, Arial, sans-serif;
+}
+
+@import "partials/reset.css";
+
+@import "_var.scss";
+
+@import "_mixin.scss";
+ 
+@import "partials/jcarousel.basic.css";
+
+@import "sprite.scss";
+
+@import "partials/_header.scss";
+
+@import "partials/_section.scss";
+
+@import "partials/_main.scss";
+
+@import "partials/_footer.scss";

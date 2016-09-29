@@ -1,0 +1,47 @@
+section{
+	background-color: $darck-bg;
+}
+
+figure{
+	margin: 0;
+}
+
+.services{
+	@include flexbox();
+	justify-content: space-between;
+	padding-bottom: 72px;
+
+	&__title{
+		padding-top: 48px;
+		h1{
+			font: $Ubuntu24;
+			color: $whiteText;
+			margin-bottom: 55px;
+		}	
+	}
+}
+
+.service{
+	width: 260/1160*100%;
+
+	&__link{
+		display: inline-block;
+		&:hover .service__caption{
+			color: #f4b60d;
+		}
+		// &:hover .service__img:after{
+		// 	background-color: rgba(36,140,236,.5);                 TODO-------------
+		// }
+	}
+	
+	&__img{
+		width: 100%;
+	}
+
+	&__caption{
+		text-align: center;
+		font: $Ubuntu16;
+		color: $whiteText;
+		margin-top: 35px;
+	}
+}

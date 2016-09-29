@@ -1,0 +1,71 @@
+.footer__top{
+	background-color: $darck-bg;
+}
+
+.linkBlock{
+	@include flexbox();
+	justify-content: space-between;
+	padding: 60px 0 80px;
+}
+
+.list{
+	width: 260px;
+
+	&__title{
+		font: $Ubuntu18;
+		color: $whiteText;
+		margin-bottom: 50px;
+	}
+
+	&__item{
+		width: 100%;
+		border-bottom: $listBorder;
+
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+
+	&__link{
+		color: $darkGrayText;
+		line-height: 36px;
+		margin-left: 3px;
+
+		&:hover{
+			color: $blueHover;
+		}
+	}
+}
+
+.footer__bottom{
+	background-color: $darcBg;
+
+}
+
+.contactsBlock{
+	@include flexbox();
+	justify-content: space-between;
+}
+
+.contacts{
+	color: $darkGrayText;
+	line-height: 60px;
+
+	&__adress{
+		margin-right: 30px;
+	}
+
+	&__tel{
+		@extend .contacts;
+		margin-right: 40px;
+	}
+
+	&__email{
+		@extend .contacts;
+	}
+}
+
+.copyright{
+		@extend .contacts;
+
+}
