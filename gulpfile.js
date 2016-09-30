@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     cssmin = require('gulp-clean-css'),
     spritesmith = require('gulp.spritesmith'),
     imagemin = require('gulp-imagemin'),
-    pngout = require('imagemin-pngout');
+    pngout = require('imagemin-pngout'),
+    svgSprite = require('gulp-svg-sprites');
     //rimraf = require('rimraf'),
     //browserSync = require("browser-sync"),
     //reload = browserSync.reload;
@@ -29,6 +30,7 @@ var path = {
         style: 'src/style/main.scss',
         img: 'src/img/*.*',
         sprite: 'src/img/sprite/*.*',
+        icons: 'src/img/icon/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
@@ -40,6 +42,7 @@ var path = {
     },
     clean: './build'
 };
+
 
 // var config = {
 //     server: {
@@ -105,12 +108,24 @@ gulp.task('sprite:build', function() {
             .pipe(spritesmith({
                 imgName: 'sprite.png',
                 cssName: 'sprite.scss',
+                imgPath: '../img/sprite.png',
                 algorithm: 'binary-tree'
             }));
 
     spriteData.img.pipe(gulp.dest(path.build.img)); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest('./src/style/')); // путь, куда сохраняем стили
 });
+
+// gulp.task('svgSprite:build', function () {
+//     return gulp.src(path.src.icons)
+//         .pipe(svgSprite({
+//             cssFile: "../../src/style/_svgSprite.scss",
+//             templates: { scss: true },
+//             preview: false
+            
+//         }))
+//         .pipe(gulp.dest(path.build.img));
+// });
 
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)

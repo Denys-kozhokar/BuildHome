@@ -9,7 +9,7 @@ main{
 }
 
 .newsBlock{
-	width: 50%;
+	width: 49%;
 	&__title{
 		font: $Ubuntu24;
 		color: $darckFont;
@@ -84,7 +84,7 @@ main{
 }
 
 .panels{
-	width: 50%;
+	width: 48%;
 
 	&__title{
 		@extend .newsBlock__title;
@@ -93,7 +93,6 @@ main{
 
 .panel{
 	&__title{
-		height: 40px;
 		font: $Ubuntu13;
 		color: $darckFont;
 		background-color: $white-bg;

@@ -16,6 +16,7 @@
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-svg-sprites": "^4.0.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
     "gulp.spritesmith": "^6.2.1",
