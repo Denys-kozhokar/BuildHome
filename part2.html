@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>P2</title>
+	<title>Part 2</title>
 	<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
 	<script type="text/javascript">
 		
 		$(function($) {
 
-
 		$.getJSON('https://raw.githubusercontent.com/goit-fe/markup_fe2o/master/js_19-20/data.json', function(data) {
-		 console.log(data);
-		var skills = [];
-		skills = _.map(data, 'skills.[]');
-		 console.log(skills);
+		 
+			var skills, names, friends = [];
+			skills = sorting(_.uniq(_.flattenDeep(_.map(data, 'skills'))));
+			names = _.map(_.sortBy(data, ['friends']), 'name');
+			friends = _.uniq(_.map(_.flattenDeep(_.map(data, 'friends')), 'name'));
+			
+			 console.log(skills);
+			 console.log(names);
+			 console.log(friends);
 
+			function sorting(arr){
+				var x = [];
+				_.each(arr, function(key){x.push(_.lowerCase(key))});
+				return x.sort();
+			}
 		});
-
-
-
-
 
 
 		});
