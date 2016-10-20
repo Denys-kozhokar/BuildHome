@@ -1,8 +1,24 @@
+.container{
+	max-width: 1160px;
+	margin: 0 auto;
+	font: 13px ArialMT, Arial, sans-serif;
+	
+	@include respond-to(tablet) {
+	    padding: 0 10px;
+	}
+
+}
+
 .top{
 	@include flexbox();
 	justify-content: space-between;
 	padding-top: 37px;
 	margin-bottom: 37px;
+	
+	@include respond-to(mobile) {
+	   flex-direction: column;	
+	   align-items: center;	   
+	}
 }
 
 .logo{
@@ -10,11 +26,14 @@
 }
 
 .social{
+	@include respond-to(mobile) {
+	   margin-top: 30px;	   
+	}
 	a{
 		color: $iconSocColor;
 		font-size: 17px;
 		margin-right: 20px;
-
+		
 		&:last-child{
 			margin-right: 0;
 		}
@@ -32,6 +51,11 @@
 	justify-content: space-between;
 	background-color: #2a2d32;
 	margin: 0 0 40px 0;
+	position: relative;
+	
+	@include respond-to(mobile) {
+	   flex-direction: row-reverse;		   
+	}
 
 	&__search{
 		height: 40px;
@@ -41,13 +65,19 @@
 		position: relative;
 		color: $darkGrayText;
 		
+		@include respond-to(mobile) {
+			z-index: 2;
+		   max-width: 50%;		   
+		}
+		
 		input{
 			background-color: $darcBg;
-			width: 240px;
+			width: 100%;
 			padding: 0 15px;
 			border: none;
 			align:center;
 			height: 100%;
+			color: $whiteText;
 		}
 
 		.icon-search{
@@ -66,8 +96,59 @@
 	padding: 0;
 	margin: 0;
 	
+	@include respond-to(tablet) {
+	   width: 60%;
+	   min-width: 350px;
+	}
+
+	@include respond-to(mobile) {
+	   	flex-direction: column;
+	   	width: 120px;
+	  	min-width: 0;
+	  	padding-top: 40px;
+	  	position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #2a2d32;
+		z-index: 2;
+	}
+
+	&__open{
+		@include respond-to(mobile) {
+	   		.menu__item{
+				display: block;
+	   		}
+		}
+	}
+	&:hover{
+		@include respond-to(mobile) {
+			background-color: $darcBg;
+		}
+	}
+
+	&:before{
+		@include respond-to(mobile) {
+		    content: 'MENU';
+		    font: $UbuntuCond;
+			color: $whiteText;
+			position: absolute;
+			top: 10px;
+			left: 40px;
+		}
+	}
+
 	&__item{
 		border-right: $darck-border;
+
+		@include respond-to(tablet) {
+	    	width: 20%;
+		}
+
+		@include respond-to(mobile) {
+			display: none;
+			border-right: none;
+			width: 100%
+		}
 		&--active{
 			background-color: $blueHover;
 		}
@@ -81,6 +162,18 @@
 		&:hover{
 			color: $yellowBg;
 		}
+
+		@include respond-to(tablet) {
+	    	padding: 23px 0;
+	    	text-align: center;
+	    	width: 100%;
+		}
+
+		@include respond-to(mobile) {
+	    	padding: 0;
+	    	line-height: 30px;
+	    	text-align: center;
+		}
 	}
 }
 
@@ -88,8 +181,12 @@
 	margin-bottom: 70px;
 	width: 100%;
 	height: auto;
+	
 	img{
-		width: 100%
+		width: 100%;
+		@include respond-to(mobile) {
+	    	width: 75%;
+		}
 	}
 }
 
@@ -98,15 +195,29 @@
 	@include flexbox();
 	justify-content: space-between;
 
+	@include respond-to(mobile) {
+		flex-direction:column;
+		margin-bottom: 44px;
+	}
 }
 
 .article{
 	@include flexbox();
 	justify-content: space-between;
 	margin-right: 2%;
+	position: relative;
+	
+	@include respond-to(mobile) {
+		max-width: 350px;
+		margin: 0 auto;
+	}
 
 	&:last-child{
 		margin-right: 0;
+
+		@include respond-to(mobile) {
+			margin: 0 auto;
+		}
 	}
 	
 	.tools{
@@ -122,6 +233,15 @@
 		line-height: 80px;
 		margin-right: 7%;
 		align-self: flex-start;
+
+		@include respond-to(tablet) {
+			font-size: 45px;
+			line-height: 30px;
+			position: absolute;
+			top: 0;
+			right: 20px;
+			margin: 0;
+		}
 	}
 
 
@@ -129,12 +249,28 @@
 		font: $Ubuntu20;
 		color: $dayFont;
 		margin-bottom: 27px;
+		
+		@include respond-to(tablet) {
+			font-size: 16px;
+			margin-bottom: 20px;
+			padding-right: 10px;
+		}
 	}
 
 	&__text{
 		font: $Ubuntu13;
 		color: #8a8a8a;
 		margin-bottom: 25px;
+
+		@include respond-to(tablet) {
+			margin-bottom: 18px;
+			padding-right: 10px;
+		}
+
+		@include respond-to(mobile) {
+			padding-right: 0;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__more{
@@ -155,6 +291,10 @@
 			margin-left: 10px;
 			color: $blueHover;
 			font-size: 10px;
+		}
+
+		@include respond-to(mobile) {
+			margin-bottom: 35px;
 		}
 	}
 }

@@ -10,16 +10,18 @@
     {
       $(this).removeClass('panel__title--active');
       $(this).children('.sign').text('+');
-      $(this).next().slideUp("fast");
+      $(this).next().slideUp("slow");
     }
     else
     {
-    allPanelText.slideUp("fast");
+    allPanelText.slideUp("slow");
     allPanelTitle.removeClass('panel__title--active');
     allSign.text('+');
+
     $(this).addClass('panel__title--active');
     $(this).children('.sign').text('-');
-    $(this).next().slideDown("fast");
+    $(this).next().slideDown("slow");
+
     return false;
     }
   });
@@ -44,6 +46,11 @@
    		$(this).next('span').stop().animate({opacity: 'show'}, 'slow');
 	});
 
+//----------------------------------------menu
+
+  $('.menu').click(function() {
+         $(this).toggleClass("menu__open");
+    });
 
 
 

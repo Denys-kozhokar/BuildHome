@@ -21,3 +21,12 @@
   -webkit-order: $val;  
   order: $val;
 }
+
+@mixin respond-to($media) {
+    @if $media == tablet {
+      @media only screen and (max-width: $tablet) { @content; }
+    }
+    @else if $media == mobile {
+      @media only screen and (max-width: $mobile) { @content; }
+    }
+}

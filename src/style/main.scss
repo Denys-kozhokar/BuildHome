@@ -1,18 +1,14 @@
 
 *, *:before, *:after { 
 	box-sizing: border-box;
-	transition: all 0.3s linear 0s;
 }
 
 a { 
+	transition: all 0.3s linear 0s;
 	text-decoration: none;
 }
 
-.container{
-	max-width: 1160px;
-	margin: 0 auto;
-	font: 13px ArialMT, Arial, sans-serif;
-}
+
 
 @import "partials/reset.css";
 
@@ -23,6 +19,8 @@ a {
 @import "partials/jcarousel.basic.css";
 
 @import "sprite.scss";
+
+@import "_svgSprite.scss";
 
 @import "font.css";
 

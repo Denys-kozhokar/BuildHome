@@ -6,20 +6,52 @@
 	@include flexbox();
 	justify-content: space-between;
 	padding: 60px 0 80px;
+
+	@include respond-to(tablet) {
+		padding: 40px 0 40px;
+		flex-flow: row wrap;
+  		justify-content: space-around;
+	}
+
+	@include respond-to(mobile) {
+		padding: 20px 0 20px;
+	}
 }
 
 .list{
 	width: 260px;
+	padding-right: 5px;
+
+	@include respond-to(tablet) {
+		width: 35%;
+	}
+
+	@include respond-to(mobile) {
+		width: 200px;
+		margin: 0 auto;
+	}
 
 	&__title{
 		font: $Ubuntu18;
 		color: $whiteText;
 		margin-bottom: 50px;
+
+		@include respond-to(tablet) {
+			margin: 25px 0 15px;
+		}
+		@include respond-to(mobile) {
+			text-align: center;
+		}
 	}
 
 	&__item{
 		width: 100%;
 		border-bottom: $listBorder;
+		
+		@include respond-to(mobile) {
+			max-width: 320px;
+			text-align: center;
+		}
 
 		&:last-child{
 			border-bottom: none;
@@ -30,6 +62,10 @@
 		color: $darkGrayText;
 		line-height: 36px;
 		margin-left: 3px;
+
+		@include respond-to(mobile) {
+			line-height: 20px;
+		}
 
 		&:hover{
 			color: $blueHover;
@@ -45,23 +81,52 @@
 .contactsBlock{
 	@include flexbox();
 	justify-content: space-between;
+
+	@include respond-to(tablet) {
+		flex-flow: row wrap;
+  		justify-content: space-around;
+  		padding: 30px 0 30px;
+	}
 }
 
 .contacts{
 	color: $darkGrayText;
 	line-height: 60px;
 
+	@include respond-to(tablet) {
+		display: block;
+		width: 100%;
+		text-align: center;
+		line-height: 25px;
+	}
+
 	&__adress{
 		margin-right: 30px;
+		@include respond-to(tablet) {
+			margin-right: 0;
+			display: block;
+		}
 	}
 
 	&__tel{
-		@extend .contacts;
+		color: $darkGrayText;
+		line-height: 60px;
 		margin-right: 40px;
+		@include respond-to(tablet) {
+			margin-right: 0;
+			line-height: 25px;
+		}
 	}
 
 	&__email{
-		@extend .contacts;
+		@extend .contacts__tel;
+		@include respond-to(tablet) {
+			margin-left: 20px;
+		}
+		@include respond-to(mobile) {
+			margin-left: 0;
+			display: block;
+		}
 	}
 
 	&__icon{
@@ -70,6 +135,8 @@
 }
 
 .copyright{
-		@extend .contacts;
-
+	@extend .contacts;
+	@include respond-to(tablet) {
+		margin-top: 20px;
+	}
 }

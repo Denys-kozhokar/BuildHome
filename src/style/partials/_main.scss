@@ -6,14 +6,32 @@ main{
 	@include flexbox();
 	justify-content: space-between;
 	padding: 65px 0 80px;
+
+	@include respond-to(mobile) {
+		padding: 35px 0 45px;
+		flex-direction:column;
+	}
 }
 
 .newsBlock{
 	width: 49%;
+
+	@include respond-to(tablet) {
+		width: 57%;
+	}
+	@include respond-to(mobile) {
+		width: 100%;
+		margin: 0 auto;
+	}
+
 	&__title{
 		font: $Ubuntu24;
 		color: $darckFont;
 		margin-bottom: 50px;
+		@include respond-to(tablet) {
+			margin-bottom: 25px;
+			text-align: center;
+		}
 	}
 }
 
@@ -25,12 +43,25 @@ main{
 	&__img{
 		margin-right: 35px;
 		position: relative;
+		
+		@include respond-to(tablet) {
+			margin-right: 15px;
+		}
 
+		img{
+			@include respond-to(tablet) {
+			width: 100px;
+		}
+	}	
 		.date{
 			position: absolute;
 			top: 15px;
-			left: -20px;
+			left: -10px;
 			text-align: center;
+			
+			@include respond-to(tablet) {
+				top: 10px;
+			}
 
 			&__month{
 				display: block;
@@ -47,6 +78,7 @@ main{
 				font:$Ubuntu18;
 				color: $dayFont;
 				background-color: $yellowBg;
+				line-height: 40px;
 			}
 		}
 
@@ -54,11 +86,19 @@ main{
 
 	&__item{
 		padding-top: 8px;
+		
+		@include respond-to(tablet) {
+			padding-top: 0;
+		}
 	}
 
 	&__title{
 		font: $Ubuntu16;
 		color: $darckFont;
+
+		@include respond-to(tablet) {
+			font-size:14px;
+		}
 
 		&:hover{
 			color: $blueHover;
@@ -68,6 +108,10 @@ main{
 	&__info{
 		color: $grayFont;
 		margin: 12px 0 30px;
+
+		@include respond-to(tablet) {
+			margin-bottom: 12px;
+		}
 
 		.author{
 			color: $blueFont;
@@ -85,6 +129,15 @@ main{
 
 .panels{
 	width: 48%;
+	
+	@include respond-to(tablet) {
+		width: 40%;
+	}
+
+	@include respond-to(mobile) {
+		width: 90%;
+		margin: 0 auto;
+	}
 
 	&__title{
 		@extend .newsBlock__title;
@@ -92,6 +145,7 @@ main{
 }
 
 .panel{
+	transition: all 5s linear 0s;
 	&__title{
 		font: $Ubuntu13;
 		color: $darckFont;
@@ -125,6 +179,10 @@ main{
 		margin: 30px 0 42px 40px;
 		display: none;
 
+		@include respond-to(tablet) {
+			margin: 15px 0 20px 20px;			
+		}
+
 		&--active{
 			display: block;
 		}
@@ -140,11 +198,26 @@ main{
 	@include flexbox();
 	justify-content: space-between;
 	align-items: center;
+
+	@include respond-to(tablet) {
+		height: auto;
+		flex-flow: row wrap;
+  		justify-content: space-around;
+  		padding: 30px 0;
+	}
+
 	
 	&__item{
 
+		@include respond-to(tablet) {
+			min-width: 30%;
+		}
+
 		& a{
 			display: inline-block;
+			@include respond-to(mobile) {
+				width: 100%;
+			}
 		}
 		#brand1{
 			@include sprite($brand1);

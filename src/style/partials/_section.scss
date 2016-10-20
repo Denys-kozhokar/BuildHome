@@ -10,9 +10,18 @@ figure{
 	@include flexbox();
 	justify-content: space-between;
 	padding-bottom: 72px;
+	
+	@include respond-to(tablet) {
+		padding-bottom: 40px;
+		flex-flow: row wrap;
+  		justify-content: space-around;
+	}
 
 	&__title{
 		padding-top: 48px;
+		@include respond-to(tablet) {
+			text-align: center;
+		}
 		h1{
 			font: $Ubuntu24;
 			color: $whiteText;
@@ -23,6 +32,13 @@ figure{
 
 .service{
 	width: 260/1160*100%;
+	
+	@include respond-to(tablet) {
+		width: 35%;
+	}
+	@include respond-to(mobile) {
+		width: 45%;
+	}
 
 	&__link{
 		position: relative;
@@ -68,6 +84,11 @@ figure{
 		text-align: center;
 		font: $Ubuntu16;
 		color: $whiteText;
-		margin-top: 35px;
+		margin: 35px 0 40px;
+
+		@include respond-to(mobile) {
+			margin: 15px 0 25px;
+			font-size: 13px;
+		}
 	}
 }
